@@ -4,7 +4,8 @@
   "description": "The bot sections of this repository",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-dev": "nodemon ./index.js",
+    "start": "node ./index.js"
   },
   "author": "The Coding Network",
   "license": "ISC",

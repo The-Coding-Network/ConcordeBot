@@ -1,4 +1,4 @@
-const private = require('../configs/private.json')
+const {token} = require('../configs/private.json')
 const Discord = require('discord.js');
 const client = new Discord.Client({ intents: [
     Discord.Intents.FLAGS.GUILDS,
@@ -8,6 +8,7 @@ const client = new Discord.Client({ intents: [
     Discord.Intents.FLAGS.GUILD_MESSAGES,   
     Discord.Intents.FLAGS.DIRECT_MESSAGES] });
 
+    
 
 // client.commands = new Discord.Collection();
 
@@ -19,4 +20,8 @@ const client = new Discord.Client({ intents: [
 //     require(`./utils/${util}`)(client, Discord);
 // });
 
-client.login(private.token)
+client.on('ready', async () => {
+    await require('./modules')(client, Discord)
+})
+
+client.login(token)
