@@ -13,11 +13,11 @@ const client = new Discord.Client({ intents: [
  client.commands = new Discord.Collection();
 
  ['command', 'event'].forEach(handler => {
-     require(`./handler/${handler}`)(client, Discord);
+     require(`./src/handler/${handler}`)(client, Discord);
  });
 
  ['functions'].forEach(util => {
-     require(`./utils/${util}`)(client, Discord);
+     require(`./src/utils/${util}`)(client, Discord);
  });
 
 client.on('ready', async () => {
