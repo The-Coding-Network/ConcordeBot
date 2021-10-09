@@ -10,15 +10,15 @@ const client = new Discord.Client({ intents: [
 
     
 
-// client.commands = new Discord.Collection();
+ client.commands = new Discord.Collection();
 
-// ['command', 'event'].forEach(handler => {
-//     require(`./handler/${handler}`)(client, Discord);
-// });
+ ['command', 'event'].forEach(handler => {
+     require(`./handler/${handler}`)(client, Discord);
+ });
 
-// ['functions'].forEach(util => {
-//     require(`./utils/${util}`)(client, Discord);
-// });
+ ['functions'].forEach(util => {
+     require(`./utils/${util}`)(client, Discord);
+ });
 
 client.on('ready', async () => {
     await require('./modules')(client, Discord)
