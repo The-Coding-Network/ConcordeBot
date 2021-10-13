@@ -1,9 +1,10 @@
-require('dotenv').config()
-const mysql = require('mysql2/promise')
+const mysql = require('mysql')
+const config = require('../../../configs/private.json')
+const maps = require('../utils/maps')
 
 module.exports = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
+    host: config.DB_HOST,
+    user: config.DB_USER,
+    password: config.DB_PASS,
+    database: config.DB_NAME
 });

@@ -3,20 +3,18 @@ CREATE DATABASE Dreamliner;
 CREATE TABLE Guild (
     guildId VARCHAR (100) NOT NULL PRIMARY KEY,
     prefix VARCHAR (10) DEFAULT '>',
-    logschannel VARCHAR (100),
-    mongourl VARCHAR (1000),
-    logs BOOLEAN,
-    punishmentLogs BOOLEAN
+    mode VARCHAR (10) DEFAULT 1,
+    nsfw BOOLEAN DEFAULT False
 );
 
 CREATE TABLE Bans (
-   guildId VARCHAR (100) NOT NULL,
+   guildId VARCHAR (100) NOT NULL PRIMARY KEY,
    userId VARCHAR (100) NOT NULL,
-   createAt VARCHAR (5000) NOT NULL 
+   removePunish VARCHAR (5000) NOT NULL 
 );
 
 CREATE TABLE Mutes (
-   guildId VARCHAR (100) NOT NULL,
+   guildId VARCHAR (100) NOT NULL PRIMARY KEY,
    userId VARCHAR (100) NOT NULL,
-   createAt VARCHAR (5000) NOT NULL 
+   removePunish VARCHAR (5000) NOT NULL 
 );
